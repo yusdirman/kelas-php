@@ -6,7 +6,7 @@ include '../header.php';
 
 if (isset($_GET)) {
 
-  $query = sprintf("SELECT name, email FROM users
+  $query = sprintf("SELECT * FROM users
                     WHERE id = '%s'", mysql_real_escape_string($_GET['id']));
 
   $result = mysql_query($query) or die(mysql_error());
@@ -19,6 +19,7 @@ if (isset($_GET)) {
 
         echo '<p>Name: ' . $row['name'] . '</p>';
         echo '<p>Email: ' . $row['email']. '</p>';
+        echo '<p><img src="data:image/jpeg;base64,' . base64_encode($row['photo']) . '"></p>';
 
         echo '<p><a href="/bengkel/users/index.php">Senarai Pengguna</a></p>';
     }

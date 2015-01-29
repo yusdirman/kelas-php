@@ -44,6 +44,7 @@ while ($row = mysql_fetch_assoc($result)) {
     echo '<td>'
       . '<a href="/bengkel/users/show.php?id=' . $row['id'] . '">Show</a>'
       . ' / <a href="/bengkel/users/edit.php?id=' . $row['id'] . '">Edit</a>'
+      . ' / <a href="/bengkel/users/upload.php?id=' . $row['id'] . '">Upload</a>'
       . ' / <a href="/bengkel/users/destroy.php?id=' . $row['id'] . '">Destroy</a>'
       . '</td>';
     echo '</tr>';
